@@ -1,0 +1,253 @@
+
+<!DOCTYPE HTML>
+<html>
+     <head>
+         
+          
+         <meta charset="utf-8">
+         <meta name="description" content="personal website">
+        <link rel="stylesheet" href="style.css"   
+        title>Ahmed amer website</title>
+     </head>
+<body>
+      <form name="where">
+ <table border ="0" width="200" cellspacing="0" cellpadding="3">
+<tr>
+    <td width="100%">
+<select name="city" size="1" onchange="updateclock(this);"> 
+<option selected>التوقيت المحلي</option>
+<option value="3">السعودية</option>
+<option value="4">الإمارات</option>
+<option value="3">الكويت</option>
+<option value="3">لبنان</option>
+<option value="4">عمان</option>
+<option value="3">قطر</option>
+<option value="3">مصر</option>
+<option value="0">المغرب</option>
+<option value="1">تونس</option>
+<option value="3">السودان</option>
+<option value="0">لندن</option> 
+<option value="1">روما</option>
+<option value="7">بانكوك</option>
+<option value="8">هونكغ كونغ</option>
+<option value="9">طوكيو</option> 
+<option value="10">سيدني</option>
+<option value="12">فوجي</option>
+<option value="-10">هاواي</option>
+<option value="-8">سان فرانسيسكو</option> 
+<option value="-5">نيويورك</option>
+</select>
+</td>
+  </tr>
+  <tr>
+    <td width="100%">
+<script language="JavaScript">
+
+
+if (document.all||document.getElementById)
+document.write('<span id="worldclock" style="font:bold 16px Arial;"></span><br>')
+
+zone=0;
+isitlocal=true;
+ampm='';
+
+function updateclock(z){
+zone=z.options[z.selectedIndex].value;
+isitlocal=(z.options[0].selected)?true:false;
+}
+
+function WorldClock(){
+now=new Date();
+ofst=now.getTimezoneOffset()/60;
+secs=now.getSeconds();
+sec=-1.57+Math.PI*secs/30;
+mins=now.getMinutes();
+min=-1.57+Math.PI*mins/30;
+hr=(isitlocal)?now.getHours():(now.getHours() + parseInt(ofst)) + parseInt(zone);
+hrs=-1.575+Math.PI*hr/6+Math.PI*parseInt(now.getMinutes())/360;
+if (hr < 0) hr+=24;
+if (hr > 23) hr-=24;
+ampm = (hr > 11)?"PM":"AM";
+statusampm = ampm.toLowerCase();
+
+hr2 = hr;
+if (hr2 == 0) hr2=12;
+(hr2 < 13)?hr2:hr2 %= 12;
+if (hr2<10) hr2="0"+hr2
+
+var finaltime=hr2+':'+((mins < 10)?"0"+mins:mins)+':'+((secs < 10)?"0"+secs:secs)+' '+statusampm;
+
+if (document.all)
+worldclock.innerHTML=finaltime
+else if (document.getElementById)
+document.getElementById("worldclock").innerHTML=finaltime
+else if (document.layers){
+document.worldclockns.document.worldclockns2.document.write(finaltime)
+document.worldclockns.document.worldclockns2.document.close()
+}
+
+
+setTimeout('WorldClock()',1000);
+}
+
+window.onload=WorldClock
+</script>
+
+
+<ilayer id="worldclockns" width=100% height=35><layer id="worldclockns2" width=100% height=35 left=0 top=0 style="font:bold 16px Arial;"></layer></ilayer>
+</td></tr></table></form>
+  
+  
+  
+    <header>
+          <div class="container">
+              <div id="brand">
+              <h1>Amer company for programming</h1>
+              
+              </div>
+        
+              <nav>
+                   <ul>
+                       <li class="current"><a href="amer.html">Home</a></li>
+                       <li><a href="#">About Us</a></li>
+                       <li><a href="log in/index.html">Contant Us</a></li>
+                       <li><a href="#">Services</a></li>
+                  </ul>
+              </nav>
+        </div>
+    </header>
+    <script language="JavaScript">
+
+
+var NS4 = (document.layers); 
+var IE4 = (document.all);
+
+var win = window; 
+var n= 0;
+
+function findInPage(str) {
+
+  var txt, i, found;
+
+  if (str == "")
+ return false;
+
+
+  if (NS4) {
+ 
+ if (!win.find(str))
+while(win.find(str, false, true))
+  n++;
+ else
+n++;
+
+ if (n == 0)
+alert("Not found.");
+  }
+
+  if (IE4) {
+ txt = win.document.body.createTextRange();
+
+ for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
+txt.moveStart("character", 1);
+txt.moveEnd("textedit");
+ }
+
+ if (found) {
+txt.moveStart("character", -1);
+txt.findText(str);
+txt.select();
+txt.scrollIntoView();
+n++;
+ }
+ 
+ else {
+if (n > 0) {
+  n = 0;
+  findInPage(str);
+}
+
+else
+  alert("Not found.");
+ }
+  }
+
+  return false;
+}
+
+</script>
+
+<form name="search" onSubmit="return findInPage(this.string.value);">
+<font size=3><input name="string" type="text" size=15 onChange="n = 0;"></font>
+<input type="submit" value="Find">
+</form>  
+
+    <section id="newsletter">
+        <div class="container">
+        
+        <h1>Subscribe for training</h1>
+        <form action="">
+              <input type="email" placeholder="enter your email">
+              <button type="submit" class="button">subscribe</button>
+        </form>    
+        </div>
+    
+    </section>
+    <SCRIPT LANGUAGE="Javascript"> 
+
+name=window.prompt("write your name.","here "); 
+document.write("<H1 align=center>welcome "+name+".</H1>") 
+
+</script>
+    
+    
+<section id="boxes">
+    
+   <div class="text">
+       <div class="box">
+                   
+          <h2>Are You Ready To Learn Programming?</h2>
+       </div>
+              <div class="buttons">
+                  <button class="btn btn-1"><a href="https://www.m3aarf.com/course/2921/%D9%83%D9%88%D8%B1%D8%B3-%D9%88%D8%AF%D9%88%D8%B1%D8%A9-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9-%D9%81%D9%89-Back-End-Web-Development-using-Go-tutorial"target="_blank">Web development</a></button>
+                   <button class="btn btn-2"><a href="https://www.youtube.com/playlist?list=PLBEmrZ4G2sRf84eZ3faGAGROFAhmCqK41"target="_blank">Web Desgin</a></button>
+       </div>
+    </div>    
+    
+</section>    
+    
+</body>
+      
+ <div class="container">
+       <div class="box">
+   <p>
+           
+     <img src="prof.jpg"      
+           
+   </p>
+                   
+          <h2>professional designs</h2>
+       </div>
+       <div class="box">
+           
+            <p>
+           
+     <img src="on.png"      
+           
+   </p>
+       
+          <h2>on time delivery</h2>
+       </div>
+       
+       <div class="box">
+            <p>
+           
+     <img src="uu.png"      
+           
+   </p>
+       
+          <h2>using modern technology</h2>
+       </div>
+          
+    </div>    
+</html>

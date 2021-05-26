@@ -1,0 +1,98 @@
+body
+{
+    background-image: url(55.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 80%;
+    
+    
+    
+    
+    
+    padding: 0;
+    margin: 0;
+    font-family: "roboto", sans-serif;
+    background-color: white;
+    direction: ltr;
+}
+.container
+{
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+.text
+{
+    width: 30%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 12%;
+}
+.buttons
+{
+    margin-left: 17% 
+}
+button{
+    width: 150px;
+    height: 40px; 
+}
+button a{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+.btn-1{
+    background: #74b9ff;
+}
+.btn-2:hover{
+     background: #74b9ff;
+}
+.button{
+    background: #74b9ff;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: #353637;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #32a0c2 5px solid;
+}
+header a
+{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+}
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #brand
+{
+    float: left;
+}
+header #brand h1
+{
+    margin: 0;
+    color: #32a0c2;
+}
+header nav
+{
+    float: right;
+    margin-top: 10px;
+}
+header .current a
+{
+    color: #32a0c2;
+    font-weight: bold;
+}
+header a:hover
+{
+    color: #cccccc;
+    font-weight: bold;
+}
